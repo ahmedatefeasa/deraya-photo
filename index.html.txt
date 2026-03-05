@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسابقة تصوير دراية 📸</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #f6f8fd 0%, #f1f5f9 100%);
+            color: #1e293b;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        /* تخصيص زر رفع الملفات */
+        input[type="file"]::file-selector-button {
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            margin-inline-end: 1rem;
+            transition: background-color 0.2s;
+        }
+        input[type="file"]::file-selector-button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- رأس الصفحة -->
+    <header class="bg-blue-600 text-white shadow-lg py-6 sticky top-0 z-50">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+                <i class="fa-solid fa-camera-retro ml-2 text-yellow-300"></i>
+                مسابقة تصوير دراية
+            </h1>
+            <p class="mt-2 text-blue-100 font-medium text-lg">شاركنا إبداعك وعدستك المتميزة!</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10 flex-grow max-w-5xl">
+
+        <!-- قسم لوحة الشرف (توب 3) -->
+        <section class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 inline-block relative">
+                    🏆 لوحة الشرف - أفضل 3 صور
+                    <div class="absolute w-1/2 h-1 bg-yellow-400 bottom-[-10px] left-1/4 rounded-full"></div>
+                </h2>
+                <p class="mt-4 text-gray-500">سيتم عرض الصور الفائزة هنا بعد انتهاء التصفيات</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- الفائز الأول -->
+                <div class="glass-card rounded-2xl overflow-hidden relative border-2 border-yellow-400 flex flex-col items-center justify-center h-72 bg-gradient-to-b from-yellow-50 to-white transform transition hover:-translate-y-2 hover:shadow-xl">
+                    <i class="fa-solid fa-trophy text-7xl text-yellow-400 mb-4 drop-shadow-md"></i>
+                    <h3 class="font-bold text-2xl text-gray-800">المركز الأول</h3>
+                    <p class="text-gray-500 mt-2 font-medium text-lg">قريباً...</p>
+                </div>
+
+                <!-- الفائز الثاني -->
+                <div class="glass-card rounded-2xl overflow-hidden relative border-2 border-gray-300 flex flex-col items-center justify-center h-72 bg-gradient-to-b from-gray-50 to-white md:mt-6 transform transition hover:-translate-y-2 hover:shadow-xl">
+                    <i class="fa-solid fa-medal text-7xl text-gray-400 mb-4 drop-shadow-md"></i>
+                    <h3 class="font-bold text-2xl text-gray-800">المركز الثاني</h3>
+                    <p class="text-gray-500 mt-2 font-medium text-lg">قريباً...</p>
+                </div>
+
+                <!-- الفائز الثالث -->
+                <div class="glass-card rounded-2xl overflow-hidden relative border-2 border-orange-300 flex flex-col items-center justify-center h-72 bg-gradient-to-b from-orange-50 to-white md:mt-12 transform transition hover:-translate-y-2 hover:shadow-xl">
+                    <i class="fa-solid fa-award text-7xl text-orange-400 mb-4 drop-shadow-md"></i>
+                    <h3 class="font-bold text-2xl text-gray-800">المركز الثالث</h3>
+                    <p class="text-gray-500 mt-2 font-medium text-lg">قريباً...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- خط فاصل -->
+        <hr class="border-gray-200 my-12">
+
+        <!-- قسم التقديم ورفع الصور -->
+        <section class="max-w-2xl mx-auto">
+            <div class="glass-card p-8 md:p-10 rounded-3xl">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-blue-700">شارك بصورتك الآن 📤</h2>
+                    <p class="text-gray-600 mt-2">املأ البيانات وارفع أفضل صورة التقطتها لدخول التصفية.</p>
+                </div>
+
+                <!-- الفورم مربوط بإيميلك مباشرة -->
+                <form action="https://formsubmit.co/ahmadatefeasa2006@gmail.com" method="POST" enctype="multipart/form-data" class="space-y-6">
+                    
+                    <!-- إعدادات مخفية لخدمة الإرسال -->
+                    <input type="hidden" name="_subject" value="📸 مشاركة جديدة في مسابقة تصوير دراية!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <!-- صفحة العودة بعد الإرسال -->
+                    <input type="hidden" name="_next" value="">
+
+                    <!-- الاسم -->
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2"><i class="fa-solid fa-user text-blue-500 ml-1"></i> الاسم الرباعي</label>
+                        <input type="text" name="الاسم" required placeholder="اكتب اسمك بالكامل..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition shadow-sm">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- الكلية -->
+                        <div>
+                            <label class="block text-gray-700 font-bold mb-2"><i class="fa-solid fa-graduation-cap text-blue-500 ml-1"></i> الكلية</label>
+                            <input type="text" name="الكلية" required placeholder="مثال: طب، صيدلة، أسنان..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition shadow-sm">
+                        </div>
+
+                        <!-- الكود الجامعي -->
+                        <div>
+                            <label class="block text-gray-700 font-bold mb-2"><i class="fa-solid fa-id-card text-blue-500 ml-1"></i> الكود الجامعي</label>
+                            <input type="text" name="الكود_الجامعي" required placeholder="رقمك التعريفي..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition shadow-sm">
+                        </div>
+                    </div>
+
+                    <!-- رفع الصورة -->
+                    <div class="bg-blue-50 p-6 rounded-xl border-2 border-dashed border-blue-300 text-center hover:bg-blue-100 transition duration-300">
+                        <label class="block text-gray-800 font-bold mb-4 text-lg cursor-pointer"><i class="fa-solid fa-cloud-arrow-up text-blue-600 ml-2 text-2xl"></i> ارفع صورتك هنا</label>
+                        <input type="file" name="الصورة_المرفوعة" accept="image/*" required class="w-full text-gray-600 font-medium">
+                        <p class="text-xs text-gray-500 mt-3">يُسمح بصيغ JPG, PNG (يفضل ألا تتعدى 5 ميجابايت)</p>
+                    </div>
+
+                    <!-- زر الإرسال -->
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xl py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        إرسال المشاركة <i class="fa-solid fa-paper-plane mr-2"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-gray-800 text-gray-300 py-6 text-center mt-10">
+        <p class="font-medium">جميع الحقوق محفوظة &copy; 2024 | مسابقة تصوير دراية</p>
+    </footer>
+
+    <script>
+        // جعل المتصفح يعود لنفس الصفحة بعد الإرسال بنجاح
+        document.querySelector('input[name="_next"]').value = window.location.href;
+    </script>
+</body>
+</html>
